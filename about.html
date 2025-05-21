@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About the team behind Tech Careers Inc.">
+    <meta name="keywords" content="team, about us, tech careers, web development">
+    <meta name="author" content="Group Neutral">
     <title>About Us | Tech Careers Inc.</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
@@ -25,28 +28,50 @@
     <main class="container">
         <section>
             <h2>Meet Our Team</h2>
-            <img src="images/cds-logo.png" alt="CDS Solutions Logo" class="logo-image">
+            
+            <!-- Group photo using figure element as required -->
+            <figure>
+                <img src="images/group-photo.jpg" alt="Group Neutral team members working together" width="300">
+                <figcaption>Group Neutral working on project development</figcaption>
+            </figure>
+            
             <p>We are a passionate group of students working together on the COS10026 project to build a fully functional and accessible job application website.</p>
         </section>
 
         <section>
-            <h3>Group Name: Group Neutral</h3>
-            <p><strong>Class Time:</strong> Wednesday 2.30 pm</p>
-            <p><strong>Tutor:</strong> Mr. Rahul Raghavan</p>
+            <h3>Group Information</h3>
+            <!-- Nested list as required -->
+            <ul>
+                <li>Group Name: Group Neutral
+                    <ul>
+                        <li>Class Time: Wednesday 2:30 PM</li>
+                        <li>Student IDs:
+                            <ul>
+                                <li>105549359</li>
+                                <li>105305593</li>
+                                <li>105507535</li>
+                                <li>105299159</li>
+                            </ul>
+                        </li>
+                        <li>Tutor's Name: Mr. Rahul Raghavan</li>
+                    </ul>
+                </li>
+            </ul>
         </section>
 
         <section>
             <h3>Team Members</h3>
             <ul>
-                <li><strong>Chanuth Senwiru</strong><br>Student ID: 105549359<br>Role: Front-End Developer</li>
-                <li><strong>Shehan Ariyarathna</strong><br>Student ID: 105305593<br>Role: Form and Application Developer</li>
-                <li><strong>Chamath Lakshitha</strong><br>Student ID: 105507535<br>Role: UI/UX Designer</li>
-                <li><strong>Dilshan Ravindu</strong><br>Student ID: 105299159<br>Role: Accessibility Specialist</li>
+                <li><strong>Chanuth Senwiru</strong> - Front-End Developer</li>
+                <li><strong>Shehan Ariyarathna</strong> - Form and Application Developer</li>
+                <li><strong>Chamath Lakshitha</strong> - UI/UX Designer</li>
+                <li><strong>Dilshan Ravindu</strong> - Accessibility Specialist</li>
             </ul>
         </section>
 
         <section>
             <h3>Member Contributions</h3>
+            <!-- Definition list as required -->
             <dl>
                 <dt>Chanuth Senwiru</dt>
                 <dd>Developed the Home Page and overall website layout structure.</dd>
@@ -61,13 +86,53 @@
                 <dd>Reviewed all pages for WCAG compliance and added ARIA roles for improved accessibility.</dd>
             </dl>
         </section>
+
+        <section>
+            <h3>Member Interests</h3>
+            <!-- Table with merged cells/rows and caption as required -->
+            <table>
+                <caption>Team Members' Technical Skills and Interests</caption>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Programming Skills</th>
+                        <th>Interests</th>
+                        <th>Hobbies</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chanuth Senwiru</td>
+                        <td>HTML, CSS, JavaScript</td>
+                        <td>Web Development</td>
+                        <td rowspan="2">Gaming</td>
+                    </tr>
+                    <tr>
+                        <td>Shehan Ariyarathna</td>
+                        <td>Python, PHP</td>
+                        <td>Backend Development</td>
+                    </tr>
+                    <tr>
+                        <td>Chamath Lakshitha</td>
+                        <td colspan="2">UI/UX Design, Adobe Creative Suite</td>
+                        <td>Photography</td>
+                    </tr>
+                    <tr>
+                        <td>Dilshan Ravindu</td>
+                        <td>Java, C#</td>
+                        <td>Mobile App Development</td>
+                        <td>Reading</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Tech Careers Inc.</p>
             <p>
-                View our project on 
+                <a href="https://yourgroupname.atlassian.net/jira/software/projects/YOUR_PROJECT/boards/1" target="_blank" rel="noopener">Jira Project</a> |
                 <a href="https://github.com/105549359/Team05_Part2" target="_blank" rel="noopener">GitHub</a> |
                 <a href="https://105549359.github.io/Team05_Part2/" target="_blank" rel="noopener">Live Site</a>
             </p>
