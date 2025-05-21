@@ -1,156 +1,383 @@
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Base body styles */
+/* General Body Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
     line-height: 1.6;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container class for layout */
+body.index {
+    background-image: linear-gradient(to bottom, #e0f7fa, #f0f4c3); /* Light, modern gradient */
+}
+
+/* Container for Centering Content */
 .container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-/* Header styling */
+/* Header Styles */
 header {
-    background-color: #004466;
-    color: white;
-    padding: 20px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #222; /* Dark background as in the image */
+    color: #fff;
+    padding: 10px 0; /* Reduced padding for a more compact header */
+    border-bottom: none; /* Removed border */
 }
 
-header h1 {
-    text-align: center;
-    font-size: 2.2rem;
+header .container {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Pushes logo to left, nav to right */
+    align-items: center; /* Vertically centers items */
+    padding: 10px 20px; /* Adjust padding for the container within the header */
+}
+
+.header-logo {
+    max-height: 60px; /* Adjust logo size */
+    margin: 0; /* Remove any default margins */
+    border-radius: 0; /* Remove border-radius if not desired */
+}
+
+/* Navigation Bar Styles (now integrated into header) */
+.header-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Keeps navigation items horizontal */
+    align-items: center;
+}
+
+.header-nav ul li {
+    margin: 0 15px;
+}
+
+.header-nav ul li a {
+    color: #fff; /* White text for dark background */
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+}
+
+.header-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Lighter hover for dark background */
+    transform: translateY(-2px);
+}
+
+.header-nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.25); /* Lighter active state for dark background */
+    font-weight: 600;
+}
+
+/* Main Content Area */
+/* The main .container now only wraps the sections below the welcome banner */
+main .container {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+}
+
+/* New Welcome Banner Section */
+.welcome-banner {
+    background-color: #333; /* Dark background for the banner */
+    color: #fff; /* White text for the banner */
+    padding: 40px 0; /* Ample vertical padding */
+    margin-bottom: 40px; /* Space below the banner */
+}
+
+.welcome-banner .container {
+    /* Override main .container styles for this specific banner */
+    background-color: transparent; /* No background for the inner container */
+    box-shadow: none; /* No shadow for the inner container */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 20px; /* Adjust horizontal padding */
+}
+
+.welcome-banner h2 {
+    color: #fff; /* White color for the heading within the banner */
+    font-size: 2.5em; /* Larger font size for prominence */
+    margin-bottom: 20px;
+    border-bottom: none; /* No border for this heading */
+    padding-bottom: 0;
+    text-align: center; /* Centered the welcome heading */
+}
+
+.welcome-banner .lead-paragraph {
+    font-size: 1.3em; /* Larger font size for readability */
+    font-weight: 400;
+    line-height: 1.8; /* Increased line height for better readability */
+    text-align: left; /* Left-align the text */
+    max-width: 900px; /* Constrain width for better readability on large screens */
+    margin-left: auto; /* Center the constrained paragraph */
+    margin-right: auto; /* Center the constrained paragraph */
+}
+
+
+/* General H2 styling (for sections other than welcome-banner) */
+main h2 {
+    color: #0288d1;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    text-align: center; /* Centered all main h2 headings */
+}
+
+/* General P styling */
+main p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Specific Section Styles */
+section {
+    margin-bottom: 40px;
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    justify-content: center; /* Centers the grid items within the container if there's extra space */
+}
+
+.benefit-item {
+    background-color: #f0f7fa; /* Very light blue background */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center; /* This centers text within each item, including h3 and p */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-item i {
+    font-size: 3.2em;
+    color: #009688; /* A teal color for icons */
+    margin-bottom: 15px;
+}
+
+.benefit-item h3 {
+    color: #00796b; /* Darker teal for headings */
+    font-size: 1.5em;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
-/* Navigation styling */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+.benefit-item p {
+    font-size: 0.95em;
+    color: #666;
 }
 
-nav a {
-    color: white;
+/* Featured Jobs Section */
+.featured-jobs {
+    text-align: center; /* This centers the section content, including the h2 */
+}
+
+.job-card {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Added to center content within job cards, including h3 and p */
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.job-card h3 {
+    color: #0288d1;
+    margin-top: 0;
+    font-size: 1.6em;
+}
+
+.job-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.apply-button {
+    display: inline-block;
+    background-color: #0288d1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-    background-color: rgba(255, 255, 255, 0.2);
+.apply-button:hover {
+    background-color: #0277bd;
 }
 
-/* Main content styling */
-main {
+/* Company Values Section */
+.company-values .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
     margin-top: 30px;
 }
 
-/* Job section card style */
-section {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    padding: 25px 30px;
-    margin-bottom: 30px;
-    transition: transform 0.2s ease-in-out;
-}
-
-section:hover {
-    transform: translateY(-5px);
-}
-
-section h2 {
-    color: #004466;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-}
-
-section h4 {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    color: #222;
-    border-bottom: 2px solid #004466;
-    padding-bottom: 5px;
-}
-
-section h5 {
-    margin-top: 10px;
-    font-size: 1.05rem;
-    color: #004466;
-}
-
-section p, section ul, section ol {
-    margin-bottom: 15px;
-}
-
-ul, ol {
-    padding-left: 20px;
-}
-
-aside {
-    background-color: #e6f2f8;
-    border-left: 4px solid #004466;
-    padding: 15px;
-    margin: 20px 0;
+.value-item {
+    background-color: #e3f2fd; /* Light blue background */
+    padding: 25px;
     border-radius: 8px;
+    text-align: center; /* This already centers h3 and p within value items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Footer styling */
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.value-item i {
+    font-size: 3em;
+    color: #0288d1;
+    margin-bottom: 15px;
+}
+
+.value-item h3 {
+    color: #0277bd;
+    font-size: 1.4em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.value-item p {
+    font-size: 0.95em;
+    color: #555;
+}
+
+/* Footer Styles */
 footer {
-    background-color: #eaeaea;
-    color: #333;
+    background-color: #263238; /* Dark grey/blue */
+    color: #fff;
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
-    font-size: 0.9rem;
-    border-top: 1px solid #ccc;
+    border-top: 5px solid #0277bd;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
 footer a {
-    color: #004466;
+    color: #81d4fa; /* Light blue for links */
     text-decoration: none;
-    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #b3e5fc;
 }
 
-/* Responsive tweaks */
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .container {
+    header .container {
+        flex-direction: column; /* Stack logo and nav vertically on small screens */
         padding: 10px;
     }
 
-    section {
-        padding: 20px;
+    .header-logo {
+        margin-bottom: 10px; /* Add space below logo when stacked */
     }
 
-    section h2 {
-        font-size: 1.5rem;
+    .header-nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+
+    .header-nav ul li {
+        margin: 5px 0;
+    }
+
+    main .container {
+        padding: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .job-card {
+        margin: 15px auto;
+    }
+
+    .company-values .values-grid,
+    .why-choose-us .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-banner {
+        padding: 30px 0; /* Adjust padding for smaller screens */
+    }
+
+    .welcome-banner h2 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    .welcome-banner .lead-paragraph {
+        font-size: 1.1em; /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    .lead-paragraph {
+        font-size: 1em;
+    }
+
+    .job-card h3 {
+        font-size: 1.4em;
+    }
+
+    .apply-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .value-item i,
+    .benefit-item i {
+        font-size: 2.5em;
+    }
+
+    .welcome-banner h2 {
+        font-size: 1.8em;
+    }
+
+    .welcome-banner .lead-paragraph {
+        font-size: 1em;
     }
 }
