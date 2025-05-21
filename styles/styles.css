@@ -16,7 +16,7 @@ body {
 /* Container class for layout */
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
     padding: 20px;
 }
@@ -26,10 +26,12 @@ header {
     background-color: #004466;
     color: white;
     padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     text-align: center;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
@@ -40,22 +42,77 @@ nav ul {
     list-style: none;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 0;
-    margin: 10px 0 0;
+    margin-top: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 nav a:hover,
 nav a[aria-current="page"] {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
-Main Content Styling
+/* Main content styling */
+main {
+    margin-top: 30px;
+}
+
+/* Job section card style */
+section {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+section h2 {
+    color: #004466;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+section h4 {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #222;
+    border-bottom: 2px solid #004466;
+    padding-bottom: 5px;
+}
+
+section h5 {
+    margin-top: 10px;
+    font-size: 1.05rem;
+    color: #004466;
+}
+
+section p, section ul, section ol {
+    margin-bottom: 15px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+aside {
+    background-color: #e6f2f8;
+    border-left: 4px solid #004466;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
 
 /* Footer styling */
 footer {
@@ -63,13 +120,15 @@ footer {
     color: #333;
     text-align: center;
     padding: 20px 0;
-    margin-top: 30px;
+    margin-top: 40px;
     font-size: 0.9rem;
+    border-top: 1px solid #ccc;
 }
 
 footer a {
     color: #004466;
     text-decoration: none;
+    font-weight: 500;
 }
 
 footer a:hover {
@@ -87,7 +146,11 @@ footer a:hover {
         padding: 10px;
     }
 
-    main {
-        padding: 15px;
+    section {
+        padding: 20px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
     }
 }
