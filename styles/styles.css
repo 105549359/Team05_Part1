@@ -55,5 +55,39 @@ nav a[aria-current="page"] {
     text-decoration: underline;
 }
 
+Main Content Styling
 
+/* Footer styling */
+footer {
+    background-color: #eaeaea;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
 
+footer a {
+    color: #004466;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
