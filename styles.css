@@ -14,5 +14,12 @@ body {
     color: #333;
 }
 
+/* Container for layout */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 
