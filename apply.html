@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Careers Inc. - Job Application</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Job Application</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="jobs.html">Job Descriptions</a></li>
+                    <li><a href="apply.html">Apply for a Job</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="mailto:info@techcareers.com.au">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post">
+                                <label for="job_ref">Job Reference Number:</label>
+                <select id="job_ref" name="job_ref" required>
+                    <option value="">Select a Job Reference</option>
+                    <option value="SSE123">SSE123 - Senior Software Engineer</option>
+                    <option value="WD456">WD456 - Web Designer</option>
+                </select><br><br>
+                <label for="first_name">First Name (max 20 characters):</label>
+                <input type="text" id="first_name" name="first_name" maxlength="20" required><br><br>
+
+                <label for="last_name">Last Name (max 20 characters):</label>
+                <input type="text" id="last_name" name="last_name" maxlength="20" required><br><br>
+
+                <label for="dob">Date of Birth (dd/mm/yyyy):</label>
+                <input type="text" id="dob" name="dob" pattern="\d{2}/\d{2}/\d{4}" placeholder="dd/mm/yyyy" required><br><br>
+
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <input type="radio" id="gender_male" name="gender" value="male" required>
+                    <label for="gender_male">Male</label>
+                    <input type="radio" id="gender_female" name="gender" value="female" required>
+                    <label for="gender_female">Female</label>
+                    <input type="radio" id="gender_other" name="gender" value="other" required>
+                    <label for="gender_other">Other</label>
+                </fieldset><br><br>
+
+                <label for="street">Street Address (max 40 characters):</label>
+                <input type="text" id="street" name="street" maxlength="40" required><br><br>
+
+                <label for="suburb">Suburb/Town (max 40 characters):</label>
+                <input type="text" id="suburb" name="suburb" maxlength="40" required><br><br>
+
+
