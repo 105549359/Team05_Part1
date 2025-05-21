@@ -75,3 +75,19 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
