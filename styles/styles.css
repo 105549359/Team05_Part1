@@ -1,458 +1,284 @@
-/* General Body Styles */
-body {
-    font-family: 'Inter', sans-serif;
+/*
+ * TechCorp Solutions Website Stylesheet
+ * Author: Group 5 - COS10026 Web Technology Project
+ * Purpose: Main stylesheet for TechCorp Solutions website
+ * Last Modified: 2025
+ */
+
+/* Reset and base styles */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: #333;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f4f4;
 }
 
-body.index {
-    background-image: linear-gradient(to bottom, #e0f7fa, #f0f4c3); /* Light, modern gradient */
-}
-
-/* Container for Centering Content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Header Styles */
+/* Header and Navigation */
 header {
-    background-color: #222; /* Dark background as in the image */
-    color: #fff;
-    padding: 10px 0; /* Reduced padding for a more compact header */
-    border-bottom: none; /* Removed border */
+    background-color: #2c3e50;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-header .container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Pushes logo to left, nav to right */
-    align-items: center; /* Vertically centers items */
-    padding: 10px 20px; /* Adjust padding for the container within the header */
-}
-
-.header-logo {
-    max-height: 60px; /* Adjust logo size */
-    margin: 0; /* Remove any default margins */
-    border-radius: 0; /* Remove border-radius if not desired */
-}
-
-/* Navigation Bar Styles (now integrated into header) */
-.header-nav ul {
+.menu {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* Keeps navigation items horizontal */
-    align-items: center;
-}
-
-.header-nav ul li {
-    margin: 0 15px;
-}
-
-.header-nav ul li a {
-    color: #fff; /* White text for dark background */
-    text-decoration: none;
-    font-weight: 500;
-    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #34495e;
+    padding: 0.5rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block;
+    margin: 0 2rem;
 }
 
-.header-nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.15); /* Lighter hover for dark background */
-    transform: translateY(-2px);
+.menu li {
+    margin: 0 1rem;
 }
 
-.header-nav ul li a.active {
-    background-color: rgba(255, 255, 255, 0.25); /* Lighter active state for dark background */
-    font-weight: 600;
-}
-
-/* Main Content Area */
-/* The main .container now only wraps the sections below the welcome banner */
-main .container {
-    background-color: rgba(255, 255, 255, 0.85); /* Slightly transparent white */
-    padding: 30px;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow */
-}
-
-/* New Welcome Banner Section */
-.welcome-banner {
-    background-color: #333; /* Dark background for the banner */
-    color: #fff; /* White text for the banner */
-    padding: 40px 0; /* Ample vertical padding */
-    margin-bottom: 40px; /* Space below the banner */
-}
-
-.welcome-banner .container {
-    /* Override main .container styles for this specific banner */
-    background-color: transparent; /* No background for the inner container */
-    box-shadow: none; /* No shadow for the inner container */
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0 20px; /* Adjust horizontal padding */
-}
-
-.welcome-banner h2 {
-    color: #fff; /* White color for the heading within the banner */
-    font-size: 2.5em; /* Larger font size for prominence */
-    margin-bottom: 20px;
-    border-bottom: none; /* No border for this heading */
-    padding-bottom: 0;
-    text-align: center; /* Centered the welcome heading */
-}
-
-.welcome-banner .lead-paragraph {
-    font-size: 1.3em; /* Larger font size for readability */
-    font-weight: 400;
-    line-height: 1.8; /* Increased line height for better readability */
-    text-align: left; /* Left-align the text */
-    max-width: 900px; /* Constrain width for better readability on large screens */
-    margin-left: auto; /* Center the constrained paragraph */
-    margin-right: auto; /* Center the constrained paragraph */
-}
-
-
-/* General H2 styling (for sections other than welcome-banner) */
-main h2 {
-    color: #0288d1;
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
-    text-align: center; /* Centered all main h2 headings */
-}
-
-/* General P styling */
-main p {
-    color: #555;
-    margin-bottom: 15px;
-    font-size: 1.1em;
-}
-
-/* Specific Section Styles */
-section {
-    margin-bottom: 40px;
-}
-
-
-/* Why Choose Us Section */
-.why-choose-us .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-    justify-content: center; /* Centers the grid items within the container if there's extra space */
-}
-
-.benefit-item {
-    background-color: #f0f7fa; /* Very light blue background */
-    padding: 25px;
-    border-radius: 8px;
-    text-align: center; /* This centers text within each item, including h3 and p */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.benefit-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-}
-
-.benefit-item i {
-    font-size: 3.2em;
-    color: #009688; /* A teal color for icons */
-    margin-bottom: 15px;
-}
-
-.benefit-item h3 {
-    color: #00796b; /* Darker teal for headings */
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.benefit-item p {
-    font-size: 0.95em;
-    color: #666;
-}
-
-/* Featured Jobs Section */
-.featured-jobs {
-    text-align: center; /* This centers the section content, including the h2 */
-}
-
-.job-card {
-    background-color: #f8f8f8;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 500px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center; /* Added to center content within job cards, including h3 and p */
-}
-
-.job-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.job-card h3 {
-    color: #0288d1;
-    margin-top: 0;
-    font-size: 1.6em;
-}
-
-.job-card p {
-    font-size: 1em;
-    color: #666;
-}
-
-.apply-button {
-    display: inline-block;
-    background-color: #0288d1;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+.menu a {
+    color: white;
     text-decoration: none;
-    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
 }
 
-.apply-button:hover {
-    background-color: #0277bd;
+.menu a:hover,
+.menu a.active {
+    background-color: #3498db;
 }
 
-/* Company Values Section */
-.company-values .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.value-item {
-    background-color: #e3f2fd; /* Light blue background */
-    padding: 25px;
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 8px;
-    text-align: center; /* This already centers h3 and p within value items */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.value-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+/* About page specific styles */
+.about-content {
+    padding: 2rem;
 }
 
-.value-item i {
-    font-size: 3em;
-    color: #0288d1;
-    margin-bottom: 15px;
-}
-
-.value-item h3 {
-    color: #0277bd;
-    font-size: 1.4em;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-.value-item p {
-    font-size: 0.95em;
-    color: #555;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #263238; /* Dark grey/blue */
-    color: #fff;
+.about-content h1 {
+    color: #2c3e50;
     text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    border-top: 5px solid #0277bd;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9em;
+.about-content h2 {
+    color: #34495e;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.8rem;
 }
 
-footer a {
-    color: #81d4fa; /* Light blue for links */
-    text-decoration: none;
-    transition: color 0.3s ease;
+.about-content h3 {
+    color: #2980b9;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.4rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
 }
 
-footer a:hover {
-    color: #b3e5fc;
+.about-content h4 {
+    color: #27ae60;
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.2rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column; /* Stack logo and nav vertically on small screens */
-        padding: 10px;
-    }
-
-    .header-logo {
-        margin-bottom: 10px; /* Add space below logo when stacked */
-    }
-
-    .header-nav ul {
-        flex-direction: column; /* Stack nav items vertically */
-    }
-
-    .header-nav ul li {
-        margin: 5px 0;
-    }
-
-    main .container {
-        padding: 20px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .job-card {
-        margin: 15px auto;
-    }
-
-    .company-values .values-grid,
-    .why-choose-us .benefits-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .welcome-banner {
-        padding: 30px 0; /* Adjust padding for smaller screens */
-    }
-
-    .welcome-banner h2 {
-        font-size: 2em; /* Adjust font size for smaller screens */
-    }
-
-    .welcome-banner .lead-paragraph {
-        font-size: 1.1em; /* Adjust font size for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.8em;
-    }
-
-    main h2 {
-        font-size: 1.8em;
-    }
-
-    .lead-paragraph {
-        font-size: 1em;
-    }
-
-    .job-card h3 {
-        font-size: 1.4em;
-    }
-
-    .apply-button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-
-    .value-item i,
-    .benefit-item i {
-        font-size: 2.5em;
-    }
-
-    .welcome-banner h2 {
-        font-size: 1.8em;
-    }
-
-    .welcome-banner .lead-paragraph {
-        font-size: 1em;
-    }
-}
-
-/* Basic Reset & Body Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 0 20px;
-}
-
-/* Header Styles */
-header {
-    background: #333;
-    color: #fff;
-    padding-top: 20px;
-    min-height: 70px;
-    border-bottom: #77aaff 3px solid;
-}
-
-header h1 {
-    float: left;
-    margin: 0;
-    padding: 0;
-}
-
-header nav {
+/* Student IDs styling - positioned to the right */
+.student-ids {
     float: right;
-    margin-top: 10px;
+    width: 30%;
+    background-color: #ecf0f1;
+    padding: 1rem;
+    margin: 1rem 0 1rem 2rem;
+    border-radius: 5px;
+    border: 2px solid #bdc3c7;
 }
 
-header ul {
-    margin: 0;
-    padding: 0;
+.student-ids h3 {
+    color: #8e44ad;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #9b59b6;
+}
+
+.student-ids ul {
     list-style: none;
 }
 
-header li {
-    display: inline;
-    padding: 0 15px;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-header a:hover {
-    color: #77aaff;
+.student-ids li {
+    padding: 0.3rem 0;
+    color: #2c3e50;
     font-weight: bold;
 }
 
-/* Footer Styles */
-footer {
-    padding: 20px;
-    margin-top: 30px;
-    color: #fff;
-    background-color: #333;
+/* Group photo styling */
+.group-photo {
+    float: right;
+    width: 40%;
+    margin: 1rem 0 1rem 2rem;
     text-align: center;
+    border: 3px solid #3498db;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.group-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.group-photo figcaption {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Definition list styling for contributions */
+.contributions {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+    border-left: 4px solid #3498db;
+}
+
+.contributions dt {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: #e8f4f8;
+    border-radius: 3px;
+}
+
+.contributions dd {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    color: #34495e;
+    line-height: 1.5;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 3px;
+    border-left: 3px solid #95a5a6;
+}
+
+/* Table styling for interests */
+.interests-table {
+    width: 100%;
+    margin: 1.5rem auto;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.interests-table caption {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+.interests-table th {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #2980b9;
+}
+
+.interests-table td {
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.interests-table tr:hover td {
+    background-color: #e8f4f8;
+}
+
+.interests-table tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.interests-table tr:nth-child(even):hover td {
+    background-color: #e0f2f1;
+}
+
+/* Nested list styling */
+.about-content ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-content ul li {
+    margin-bottom: 0.5rem;
+    list-style-type: disc;
+}
+
+.about-content ul ul {
+    margin-top: 0.5rem;
+    margin-left: 1.5rem;
+}
+
+.about-content ul ul li {
+    list-style-type: circle;
+    color: #7f8c8d;
+}
+
+/* Paragraphs */
+.about-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    line-height: 1.7;
+    color: #2c3e50;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    width: 100%;
+    clear: both;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
 }
 
 footer a {
-    color: #77aaff;
+    color: #3498db;
     text-decoration: none;
 }
 
@@ -460,71 +286,121 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Main Content Styles */
-main {
-    padding: 20px 0;
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu li {
+        margin: 0.2rem 0;
+    }
+    
+    main {
+        margin: 1rem;
+        padding: 0;
+    }
+    
+    .about-content {
+        padding: 1rem;
+    }
+    
+    .student-ids,
+    .group-photo {
+        float: none;
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .interests-table {
+        font-size: 0.9rem;
+    }
+    
+    .interests-table th,
+    .interests-table td {
+        padding: 0.5rem;
+    }
 }
 
-main .container {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+@media screen and (max-width: 480px) {
+    .about-content h1 {
+        font-size: 2rem;
+    }
+    
+    .about-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .about-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .interests-table {
+        font-size: 0.8rem;
+    }
+    
+    .interests-table th,
+    .interests-table td {
+        padding: 0.3rem;
+    }
 }
 
-/* Form Styles */
-form {
-    max-width: 600px;
-    margin: 0 auto;
+/* Clearfix for floated elements */
+.about-content::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+/* Additional accessibility improvements */
+a:focus,
+button:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form select,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .menu {
+        background-color: black;
+    }
+    
+    .menu a {
+        color: white;
+    }
+    
+    .interests-table th {
+        background-color: black;
+        color: white;
+    }
 }
 
-form input[type="radio"],
-form input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-form fieldset {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-}
-
-form legend {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-form input[type="submit"] {
-    background: #333;
-    color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-    background: #555;
+/* Print styles */
+@media print {
+    header,
+    footer {
+        display: none;
+    }
+    
+    main {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .group-photo,
+    .student-ids {
+        float: none;
+        width: 100%;
+    }
+    
+    .interests-table {
+        break-inside: avoid;
+    }
 }
