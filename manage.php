@@ -102,3 +102,37 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
             $lockout_time = 15 * 60;
+
+            if ($user['login_attempts'] >= 5 && 
+                $user['last_attempt'] !== null && 
+                (time() - strtotime($user['last_attempt'])) < $lockout_time) {
+                $_SESSION['error'] = "Account is temporarily locked. Please try again later.";
+                header("Location: manage.php");
+                exit();
+            }
+            
+            if (password_verify($_POST['password'], $user['password'])) {
+                $stmt = $conn->prepare("UPDATE managers SET login_attempts = 0, last_attempt = NULL WHERE id = ?");
+                $stmt->bind_param("i", $user['id']);
+                $stmt->execute();
+                
+                $_SESSION['logged_in'] = true;
+                $_SESSION['user_id'] = $user['id'];
+                $_SESSION['username'] = $user['username'];
+                header("Location: manage.php");
+                exit();
+            } else {
+                $stmt = $conn->prepare("UPDATE managers SET login_attempts = login_attempts + 1, last_attempt = CURRENT_TIMESTAMP WHERE id = ?");
+                $stmt->bind_param("i", $user['id']);
+                $stmt->execute();
+                
+                $_SESSION['error'] = "Invalid username or password";
+            }
+        } else {
+            $_SESSION['error'] = "Invalid username or password";
+        }
+        $stmt->close();
+        $conn->close();
+        header("Location: manage.php");
+        exit();
+    }
