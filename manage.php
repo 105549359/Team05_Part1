@@ -136,3 +136,16 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         header("Location: manage.php");
         exit();
     }
+
+    include('header.inc');
+    ?>
+    <main class="manage-page">
+        <section class="hero">
+            <div class="container">
+                <h2>Manager Access</h2>
+                <div class="auth-tabs">
+                    <button class="tab-button active" onclick="showTab('login')">Login</button>
+                    <button class="tab-button" onclick="showTab('register')">Register</button>
+                </div>
+            </div>
+        </section>
