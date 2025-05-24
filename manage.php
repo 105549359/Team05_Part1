@@ -55,3 +55,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $errors[] = "Email already exists";
         }
         $stmt->close();
+
+
+        if (empty($errors)) {
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        
+        $stmt = $conn->prepare("INSERT INTO managers (username, email, password) VALUES (?, ?, ?)");
+        if ($stmt) {
+            $stmt->bind_param("sss", $username, $email, $hashed_password);
+            if ($stmt->execute()) {
+                $_SESSION['success'] = "Registration successful! Please login with your credentials.";
+                $stmt->close();
+                $conn->close();
+                header("Location: manage.php");
+                exit();
+            } else {
+                $errors[] = "Error creating account: " . $stmt->error;
+            }
+            $stmt->close();
+        } else {
+            $errors[] = "Error preparing database: " . $conn->error;
+        }
+    }
+    
+    if (!empty($errors)) {
+        $_SESSION['error'] = implode("<br>", $errors);
+    }
+    
+    $conn->close();
+     header("Location: manage.php");
+    exit();
+}
