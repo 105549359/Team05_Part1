@@ -45,3 +45,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $errors[] = "Username already exists";
         }
         $stmt->close();
+
+
+         $stmt = $conn->prepare("SELECT id FROM managers WHERE email = ?");
+    if ($stmt) {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        if ($stmt->get_result()->num_rows > 0) {
+            $errors[] = "Email already exists";
+        }
+        $stmt->close();
