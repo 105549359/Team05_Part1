@@ -86,3 +86,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
      header("Location: manage.php");
     exit();
 }
+
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'login') {
+        include('settings.php');
+        $conn = createDBConnection();
+        
+        $username = $_POST['username'];
+        
+        $stmt = $conn->prepare("SELECT id, username, password, login_attempts, last_attempt FROM managers WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows === 1) {
+            $user = $result->fetch_assoc();
+            $lockout_time = 15 * 60;
