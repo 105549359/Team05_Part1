@@ -25,4 +25,201 @@
             </nav>
         </div>
     </header>
-   
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Join Our Team</h2>
+                <p>Take the first step towards an exciting career at TechVision Solutions</p>
+            </div>
+        </section>
+
+        <section class="application-form">
+            <div class="container">
+                <div class="form-header">
+                    <h2>Job Application Form</h2>
+                    <p class="form-subtitle">Please fill out the form below to apply for the position</p>
+                </div>
+                <div class="form-container">
+                    <aside class="application-sidebar">
+                        <div class="sidebar-content">
+                        </div>
+                    </aside>
+
+                    <form id="jobApplication" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" target="_blank" aria-label="Job Application Form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="jobRef">Job Reference Number <span class="required">*</span></label>
+                                <select id="jobRef" name="jobRef" required aria-required="true">
+                                    <option value="">Select a position</option>
+                                    <option value="SSE001">Senior Software Engineer (SSE001)</option>
+                                    <option value="CSA002">Cloud Solutions Architect (CSA002)</option>
+                                    <option value="CA003">Cybersecurity Analyst (CA003)</option>
+                                    <option value="DAE004">Data Analytics Engineer (DAE004)</option>
+                                    <option value="DE005">DevOps Engineer (DE005)</option>
+                                    <option value="FD006">Frontend Developer (FD006)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       pattern="[A-Za-z]{1,20}" maxlength="20"
+                                       title="First name should contain only letters (max 20 characters)"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       pattern="[A-Za-z]{1,20}" maxlength="20"
+                                       title="Last name should contain only letters (max 20 characters)"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dob">Date of Birth <span class="required">*</span></label>
+                                <input type="text" id="dob" name="dob" required 
+                                       pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}"
+                                       placeholder="DD/MM/YYYY"
+                                       title="Please enter date in DD/MM/YYYY format"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <fieldset>
+                                    <legend>Gender <span class="required">*</span></legend>
+                                    <div class="radio-group" role="radiogroup" aria-required="true">
+                                        <label>
+                                            <input type="radio" name="gender" value="male" required> Male
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="gender" value="female"> Female
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="gender" value="other"> Other
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <label for="street">Street Address <span class="required">*</span></label>
+                                <input type="text" id="street" name="street" required 
+                                       pattern="[A-Za-z0-9\s,\.\-]{1,40}"
+                                       maxlength="40"
+                                       title="Street address should be less than 40 characters">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="suburb">Suburb/Town <span class="required">*</span></label>
+                                <input type="text" id="suburb" name="suburb" required 
+                                       maxlength="40" pattern="[A-Za-z\s]{1,40}"
+                                       title="Suburb/Town should contain only letters and spaces (max 40 characters)">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State <span class="required">*</span></label>
+                                <select id="state" name="state" required>
+                                    <option value="">Select a state</option>
+                                    <option value="VIC">Victoria</option>
+                                    <option value="NSW">New South Wales</option>
+                                    <option value="QLD">Queensland</option>
+                                    <option value="NT">Northern Territory</option>
+                                    <option value="WA">Western Australia</option>
+                                    <option value="SA">South Australia</option>
+                                    <option value="TAS">Tasmania</option>
+                                    <option value="ACT">Australian Capital Territory</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postcode">Postcode <span class="required">*</span></label>
+                                <input type="text" id="postcode" name="postcode" required 
+                                       pattern="[0-9]{4}"
+                                       maxlength="4"
+                                       title="Postcode must be 4 digits">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required 
+                                       pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                                       title="Please enter a valid email address">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="phone" name="phone" required 
+                                       pattern="[0-9\s]{8,12}" maxlength="12"
+                                       title="Phone number should be 8-12 digits">
+                            </div>
+
+                            <div class="form-group skills-group">
+                                <fieldset>
+                                    <legend>Technical Skills <span class="required">*</span></legend>
+                                    <div class="checkbox-group" role="group" aria-required="true">
+                                        <label>
+                                            <input type="checkbox" name="skills" value="html" required> HTML
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="skills" value="css"> CSS
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="skills" value="javascript"> JavaScript
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="skills" value="python"> Python
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="skills" value="java"> Java
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" name="skills" value="sql"> SQL
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form-group other-skills-group">
+                                <label for="otherSkills">Other Skills</label>
+                                <textarea id="otherSkills" name="otherSkills" rows="4" 
+                                            placeholder="Please list any other relevant skills or experience"
+                                            maxlength="500"></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <input type="submit" value="Apply" class="cta-button">
+                                <input type="reset" value="Reset Form" class="secondary-button">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@techvisionsolutions.com.au">info@techvisionsolutions.com.au</a></p>
+                    <p>Phone: +61 3 1234 5678</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Project Management</h3>
+                    <p><a href="https://techvisionsolutions.atlassian.net/jira/software/projects/TVS/boards/1" target="_blank">View our Jira Project</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechVision Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
