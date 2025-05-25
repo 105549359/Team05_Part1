@@ -35,3 +35,10 @@ $statePostcodes = [
     'ACT' => ['min' => '2600', 'max' => '2699']
 ];
 ?>
+<main>
+    <section class="hero">
+        <div class="container">
+            <h2>Apply for a Position</h2>
+            <p>Join our team and be part of something extraordinary.</p>
+        </div>
+    </section>
