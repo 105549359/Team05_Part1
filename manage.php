@@ -229,3 +229,90 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 }
             });
         </script>
+         </main>
+    <?php
+    include('footer.inc');
+    exit();
+}
+
+include('settings.php');
+include('header.inc');
+
+$conn = createDBConnection();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['action'])) {
+        switch ($_POST['action']) {
+            case 'logout':
+                session_unset();
+                session_destroy();
+                header("Location: manage.php");
+                exit();
+                break;
+                
+            case 'delete':
+                if (isset($_POST['job_ref'])) {
+                    $stmt = $conn->prepare("DELETE FROM eoi WHERE job_ref = ?");
+                    $stmt->bind_param("s", $_POST['job_ref']);
+                    if ($stmt->execute()) {
+                        $_SESSION['success'] = "Successfully deleted all EOIs for job reference: " . $_POST['job_ref'];
+                    } else {
+                        $_SESSION['error'] = "Error deleting EOIs: " . $conn->error;
+                    }
+                    $stmt->close();
+                }
+                break;
+
+            case 'update_status':
+                if (isset($_POST['EOInumber']) && isset($_POST['status'])) {
+                    $stmt = $conn->prepare("UPDATE eoi SET status = ? WHERE EOInumber = ?");
+                    $stmt->bind_param("si", $_POST['status'], $_POST['EOInumber']);
+                    if ($stmt->execute()) {
+                        $_SESSION['success'] = "Status updated successfully";
+                    } else {
+                        $_SESSION['error'] = "Error updating status: " . $conn->error;
+                    }
+                    $stmt->close();
+                }
+                break;
+        }
+    }
+}
+
+$where_conditions = [];
+$params = [];
+$types = "";
+
+if (isset($_GET['job_ref']) && !empty($_GET['job_ref'])) {
+    $where_conditions[] = "job_ref = ?";
+    $params[] = $_GET['job_ref'];
+    $types .= "s";
+}
+
+if (isset($_GET['name']) && !empty($_GET['name'])) {
+    $where_conditions[] = "(fname LIKE ? OR lname LIKE ?)";
+    $search_term = "%" . $_GET['name'] . "%";
+    $params[] = $search_term;
+    $params[] = $search_term;
+    $types .= "ss";
+}
+
+if (isset($_GET['status_filter']) && !empty($_GET['status_filter'])) {
+    $where_conditions[] = "status = ?";
+    $params[] = $_GET['status_filter'];
+    $types .= "s";
+}
+
+if (isset($_GET['skill_filter']) && !empty($_GET['skill_filter'])) {
+    switch($_GET['skill_filter']) {
+        case 'Python':
+            $where_conditions[] = "skill1 = 1";
+            break;
+        case 'Java':
+            $where_conditions[] = "skill2 = 1";
+            break;
+        case 'JavaScript':
+            $where_conditions[] = "skill3 = 1";
+            break;
+    }
+}
