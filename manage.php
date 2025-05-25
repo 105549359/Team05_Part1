@@ -207,3 +207,25 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                 </div>
             </form>
         </div>
+
+        <script>
+            function showTab(tabName) {
+                document.querySelectorAll('.tab-button').forEach(button => {
+                    button.classList.remove('active');
+                });
+                event.target.classList.add('active');
+                
+                document.getElementById('login-form').style.display = tabName === 'login' ? 'block' : 'none';
+                document.getElementById('register-form').style.display = tabName === 'register' ? 'block' : 'none';
+            }
+            
+            document.getElementById('register-form').addEventListener('submit', function(e) {
+                const password = document.getElementById('reg_password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+                
+                if (password !== confirmPassword) {
+                    e.preventDefault();
+                    alert('Passwords do not match!');
+                }
+            });
+        </script>
