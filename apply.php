@@ -42,3 +42,25 @@ $statePostcodes = [
             <p>Join our team and be part of something extraordinary.</p>
         </div>
     </section>
+    
+    <section class="application-form">
+        <div class="container">
+            <?php
+            // Displays success messages from the session
+            if (isset($_SESSION['success'])) {
+                echo '<div class="alert alert-success">' . htmlspecialchars($_SESSION['success']) . '</div>';
+                unset($_SESSION['success']); // Clears the success message after display
+            }
+            // Displays error messages from the session
+            if (isset($_SESSION['errors'])) {
+                echo '<div class="alert alert-error"><ul>';
+                foreach ($_SESSION['errors'] as $error) {
+                    echo '<li>' . htmlspecialchars($error) . '</li>';
+                }
+                echo '</ul></div>';
+                unset($_SESSION['errors']); // Clears the error messages after display
+            }
+            ?>
+
+            <form action="process_eoi.php" method="post" class="job-application-form" novalidate="novalidate">
+                <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
