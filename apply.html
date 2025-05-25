@@ -47,3 +47,57 @@
 
                     <form id="jobApplication" action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" target="_blank" aria-label="Job Application Form">
                         <div class="form-grid">
+                            <div class="form-group">
+                                <label for="jobRef">Job Reference Number <span class="required">*</span></label>
+                                <select id="jobRef" name="jobRef" required aria-required="true">
+                                    <option value="">Select a position</option>
+                                    <option value="SSE001">Senior Software Engineer (SSE001)</option>
+                                    <option value="CSA002">Cloud Solutions Architect (CSA002)</option>
+                                    <option value="CA003">Cybersecurity Analyst (CA003)</option>
+                                    <option value="DAE004">Data Analytics Engineer (DAE004)</option>
+                                    <option value="DE005">DevOps Engineer (DE005)</option>
+                                    <option value="FD006">Frontend Developer (FD006)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="firstName">First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       pattern="[A-Za-z]{1,20}" maxlength="20"
+                                       title="First name should contain only letters (max 20 characters)"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       pattern="[A-Za-z]{1,20}" maxlength="20"
+                                       title="Last name should contain only letters (max 20 characters)"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dob">Date of Birth <span class="required">*</span></label>
+                                <input type="text" id="dob" name="dob" required 
+                                       pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])/(19|20)\d{2}"
+                                       placeholder="DD/MM/YYYY"
+                                       title="Please enter date in DD/MM/YYYY format"
+                                       aria-required="true">
+                            </div>
+
+                            <div class="form-group">
+                                <fieldset>
+                                    <legend>Gender <span class="required">*</span></legend>
+                                    <div class="radio-group" role="radiogroup" aria-required="true">
+                                        <label>
+                                            <input type="radio" name="gender" value="male" required> Male
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="gender" value="female"> Female
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="gender" value="other"> Other
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
