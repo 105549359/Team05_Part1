@@ -3,180 +3,485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Careers Inc. - Job Descriptions</title>
+    <title>Career Opportunities - TechVision Solutions</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="container">
-            <h1>Job Descriptions</h1>
-            <nav>
+            <div class="logo-container">
+                <img src="images/logo.jpeg" alt="TechVision Solutions Logo" class="logo">
+                <h1>TechVision Solutions</h1>
+            </div>
+            <nav class="main-nav" aria-label="Main Navigation">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="jobs.html">Job Descriptions</a></li>
-                    <li><a href="apply.html">Apply for a Job</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="mailto:info@techcareers.com.au">Contact Us</a></li>
+                    <li><a href="index.html" aria-label="Home Page">Home</a></li>
+                    <li><a href="jobs.html" class="active" aria-label="Current Page: Jobs">Jobs</a></li>
+                    <li><a href="apply.html" aria-label="Apply for Jobs">Apply</a></li>
+                    <li><a href="about.html" aria-label="About Us">About</a></li>
+                    <li><a href="mailto:info@techvisionsolutions.com.au" aria-label="Contact Us via Email">Contact Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main>
-        <div class="container">
-            <section>
-                <h2>Senior Software Engineer</h2>
-                <p>
-                    We are seeking a highly skilled and experienced Senior Software Engineer
-                    to join our dynamic team. The ideal candidate will be responsible for
-                    designing, developing, and implementing complex software solutions.
-                </p>
-                <aside>
-                    <h3>Salary Overview</h3>
-                    <p>
-                        Salary Range: $120,000 - $150,000 per year <br>
-                        Reports to: Engineering Manager
-                    </p>
+        <section class="hero">
+            <div class="container">
+                <h2>Join Our Team</h2>
+                <p>Explore exciting career opportunities and be part of our innovative technology solutions team.</p>
+            </div>
+        </section>
+
+        <section class="job-listings">
+            <div class="container">
+                <aside class="job-sidebar">
+                    <h3>Quick Links</h3>
+                    <nav aria-label="Job positions navigation">
+                        <ul>
+                            <li><a href="#senior-software">Senior Software Engineer</a></li>
+                            <li><a href="#cloud-architect">Cloud Solutions Architect</a></li>
+                            <li><a href="#cybersecurity">Cybersecurity Analyst</a></li>
+                            <li><a href="#data-analytics">Data Analytics Engineer</a></li>
+                            <li><a href="#devops">DevOps Engineer</a></li>
+                            <li><a href="#frontend">Frontend Developer</a></li>
+                        </ul>
+                    </nav>
+                    <div class="job-tips">
+                        <h3>Application Tips</h3>
+                        <ol>
+                            <li>Review job requirements carefully</li>
+                            <li>Highlight relevant experience</li>
+                            <li>Customize your resume</li>
+                            <li>Prepare for technical interviews</li>
+                        </ol>
+                    </div>
                 </aside>
-                <section>
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Design, develop, and test software applications.</li>
-                        <li>Collaborate with cross-functional teams.</li>
-                        <li>Mentor junior developers.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Qualifications</h4>
-                    <h5>Essential</h5>
-                    <ol>
-                        <li>Bachelor's degree in Computer Science or related field.</li>
-                        <li>5+ years of software development experience.</li>
-                        <li>Proficiency in Java, C++, or Python.</li>
-                    </ol>
-                    <h5>Preferable</h5>
-                    <ul>
-                        <li>Experience with Agile methodologies.</li>
-                        <li>Cloud computing experience (AWS, Azure, GCP).</li>
-                        <li>Master's degree in Computer Science.</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <h2>Web Designer</h2>
-                <p>
-                    We are looking for a creative and talented Web Designer to create visually
-                    appealing and user-friendly websites. The successful candidate will have
-                    a strong understanding of design principles and web technologies.
-                </p>
-                <aside>
-                    <h3>Salary Overview</h3>
-                    <p>
-                        Salary Range: $70,000 - $90,000 per year <br>
-                        Reports to: Design Lead
-                    </p>
-                </aside>
-                <section>
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Design website layouts and user interfaces.</li>
-                        <li>Create graphics and visual elements.</li>
-                        <li>Ensure websites are responsive and accessible.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Qualifications</h4>
-                    <h5>Essential</h5>
-                    <ol>
-                        <li>Bachelor's degree in Design or related field.</li>
-                        <li>3+ years of web design experience.</li>
-                        <li>Proficiency in HTML, CSS, and JavaScript.</li>
-                    </ol>
-                    <h5>Preferable</h5>
-                    <ul>
-                        <li>Experience with UI/UX design.</li>
-                        <li>Knowledge of graphic design software (e.g., Adobe Photoshop).</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <h2>IT Support Technician</h2>
-                <p>
-                    We are hiring a reliable IT Support Technician to provide technical assistance and support
-                    for computer systems, hardware, and software issues across the organization.
-                </p>
-                <aside>
-                    <h3>Salary Overview</h3>
-                    <p>
-                        Salary Range: $50,000 - $65,000 per year <br>
-                        Reports to: IT Manager
-                    </p>
-                </aside>
-                <section>
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Respond to technical support requests and resolve user issues.</li>
-                        <li>Maintain and troubleshoot hardware and software systems.</li>
-                        <li>Install and configure computer systems and applications.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Qualifications</h4>
-                    <h5>Essential</h5>
-                    <ol>
-                        <li>Associate’s or Bachelor's degree in Information Technology or related field.</li>
-                        <li>2+ years of IT support or help desk experience.</li>
-                        <li>Knowledge of Windows and Mac operating systems.</li>
-                    </ol>
-                    <h5>Preferable</h5>
-                    <ul>
-                        <li>Experience with Active Directory and ticketing systems.</li>
-                        <li>CompTIA A+ or similar certifications.</li>
-                        <li>Excellent problem-solving and communication skills.</li>
-                    </ul>
-                </section>
-            </section>
-            <section>
-                <h2>DevOps Engineer</h2>
-                <p>
-                    We are seeking a detail-oriented and proactive DevOps Engineer to join our team.
-                    The successful candidate will help automate and streamline our development and deployment processes.
-                </p>
-                <aside>
-                    <h3>Salary Overview</h3>
-                    <p>
-                        Salary Range: $100,000 - $130,000 per year <br>
-                        Reports to: Infrastructure Manager
-                    </p>
-                </aside>
-                <section>
-                    <h4>Responsibilities</h4>
-                    <ul>
-                        <li>Manage CI/CD pipelines and automate deployments.</li>
-                        <li>Monitor system performance and troubleshoot issues.</li>
-                        <li>Ensure infrastructure security and compliance.</li>
-                    </ul>
-                </section>
-                <section>
-                    <h4>Qualifications</h4>
-                    <h5>Essential</h5>
-                    <ol>
-                        <li>Bachelor's degree in Computer Science, Engineering, or related field.</li>
-                        <li>3+ years of experience in DevOps or system administration.</li>
-                        <li>Proficiency with tools like Docker, Jenkins, and Kubernetes.</li>
-                    </ol>
-                    <h5>Preferable</h5>
-                    <ul>
-                        <li>Experience with cloud platforms (AWS, Azure, GCP).</li>
-                        <li>Knowledge of scripting languages (Bash, Python).</li>
-                        <li>Certifications such as AWS Certified DevOps Engineer.</li>
-                    </ul>
-                </section>
-            </section>
-        </div>
+
+                <div class="job-listings-content">
+                    <div class="job-listing" id="senior-software">
+                        <div class="job-header">
+                            <h2>Senior Software Engineer</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-SE01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Melbourne / Remote</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $120,000 - $150,000</span>
+                                <span class="reporting">Reports to: Head of Software Development</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>We're looking for a Senior Software Engineer to lead the development of our next-generation cloud platform. You'll work with cutting-edge technologies and mentor junior developers while contributing to architectural decisions.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Design and implement scalable software solutions</li>
+                                <li>Lead code reviews and maintain code quality standards</li>
+                                <li>Collaborate with cross-functional teams</li>
+                                <li>Mentor junior developers</li>
+                                <li>Participate in architectural discussions</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>5+ years of software development experience</li>
+                                    <li>Strong proficiency in Python, Java, or Go</li>
+                                    <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
+                                    <li>Knowledge of microservices architecture</li>
+                                    <li>Excellent problem-solving skills</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with containerization (Docker, Kubernetes)</li>
+                                    <li>Knowledge of CI/CD pipelines</li>
+                                    <li>Previous team leadership experience</li>
+                                    <li>Contributions to open-source projects</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Competitive salary and bonus structure</li>
+                                <li>Flexible work arrangements</li>
+                                <li>Professional development budget</li>
+                                <li>Health and wellness programs</li>
+                                <li>Generous leave policies</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=senior-software-engineer" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="job-listing" id="cloud-architect">
+                        <div class="job-header">
+                            <h2>Cloud Solutions Architect</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-CA01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sydney</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $140,000 - $180,000</span>
+                                <span class="reporting">Reports to: Chief Technology Officer</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>As a Cloud Solutions Architect, you'll design and implement cloud infrastructure solutions for our clients, ensuring scalability, security, and cost-effectiveness.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Design cloud architecture solutions</li>
+                                <li>Implement cloud security best practices</li>
+                                <li>Optimize cloud costs and performance</li>
+                                <li>Lead cloud migration projects</li>
+                                <li>Provide technical guidance to clients</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>7+ years of IT experience</li>
+                                    <li>Cloud certification (AWS, Azure, or GCP)</li>
+                                    <li>Strong knowledge of cloud security</li>
+                                    <li>Experience with infrastructure as code</li>
+                                    <li>Excellent communication skills</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with multi-cloud environments</li>
+                                    <li>Knowledge of compliance frameworks</li>
+                                    <li>Previous consulting experience</li>
+                                    <li>Public speaking or training experience</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Competitive salary package</li>
+                                <li>Annual training budget</li>
+                                <li>Health insurance coverage</li>
+                                <li>Performance bonuses</li>
+                                <li>Work-life balance initiatives</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=cloud-solutions-architect" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="job-listing" id="cybersecurity">
+                        <div class="job-header">
+                            <h2>Cybersecurity Analyst</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-CS01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Brisbane</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $90,000 - $120,000</span>
+                                <span class="reporting">Reports to: Security Operations Manager</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>Join our cybersecurity team to protect our clients' digital assets and ensure compliance with security standards. You'll monitor systems, investigate incidents, and implement security measures.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Monitor security systems and alerts</li>
+                                <li>Investigate security incidents</li>
+                                <li>Implement security controls</li>
+                                <li>Conduct security assessments</li>
+                                <li>Develop security documentation</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>3+ years of cybersecurity experience</li>
+                                    <li>Knowledge of security frameworks (ISO 27001, NIST)</li>
+                                    <li>Experience with SIEM tools</li>
+                                    <li>Understanding of network security</li>
+                                    <li>Relevant certifications (Security+, CISSP, or equivalent)</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with penetration testing</li>
+                                    <li>Knowledge of cloud security</li>
+                                    <li>Scripting skills (Python, PowerShell)</li>
+                                    <li>Incident response experience</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Competitive salary package</li>
+                                <li>Security certification support</li>
+                                <li>Health and wellness benefits</li>
+                                <li>Professional development opportunities</li>
+                                <li>Team building activities</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=cybersecurity-analyst" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="job-listing" id="data-analytics">
+                        <div class="job-header">
+                            <h2>Data Analytics Engineer</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-DA01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Sydney</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $100,000 - $130,000</span>
+                                <span class="reporting">Reports to: Head of Data Science</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>Join our data team to build and maintain data pipelines, create analytics solutions, and help drive data-driven decision making across the organization.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Design and implement data pipelines</li>
+                                <li>Develop analytics dashboards and reports</li>
+                                <li>Optimize data processing workflows</li>
+                                <li>Collaborate with business stakeholders</li>
+                                <li>Ensure data quality and integrity</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>3+ years of data engineering experience</li>
+                                    <li>Proficiency in SQL and Python</li>
+                                    <li>Experience with data warehousing</li>
+                                    <li>Knowledge of ETL processes</li>
+                                    <li>Strong analytical skills</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with big data technologies</li>
+                                    <li>Knowledge of machine learning</li>
+                                    <li>Cloud platform experience</li>
+                                    <li>Data visualization skills</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Competitive salary package</li>
+                                <li>Data certification support</li>
+                                <li>Health insurance coverage</li>
+                                <li>Flexible work arrangements</li>
+                                <li>Learning and development budget</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=data-analytics-engineer" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="job-listing" id="devops">
+                        <div class="job-header">
+                            <h2>DevOps Engineer</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-DE01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Remote</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $110,000 - $140,000</span>
+                                <span class="reporting">Reports to: Head of DevOps</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>We're seeking a DevOps Engineer to automate and optimize our deployment processes, maintain infrastructure, and ensure high availability of our services.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Implement CI/CD pipelines</li>
+                                <li>Manage cloud infrastructure</li>
+                                <li>Automate deployment processes</li>
+                                <li>Monitor system performance</li>
+                                <li>Implement security best practices</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>4+ years of DevOps experience</li>
+                                    <li>Experience with AWS/Azure/GCP</li>
+                                    <li>Proficiency in Docker and Kubernetes</li>
+                                    <li>Knowledge of infrastructure as code</li>
+                                    <li>Strong scripting skills</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with monitoring tools</li>
+                                    <li>Knowledge of security practices</li>
+                                    <li>Previous team leadership</li>
+                                    <li>Cloud certifications</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Remote work flexibility</li>
+                                <li>Cloud certification support</li>
+                                <li>Home office setup allowance</li>
+                                <li>Health and wellness benefits</li>
+                                <li>Annual tech budget</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=devops-engineer" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <div class="job-listing" id="frontend">
+                        <div class="job-header">
+                            <h2>Frontend Developer</h2>
+                            <div class="job-meta">
+                                <span class="reference">Reference: TVS-FD01</span>
+                                <span class="location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Melbourne / Remote</span>
+                                <span class="type"><i class="fas fa-briefcase" aria-hidden="true"></i> Full-time</span>
+                                <span class="salary"><i class="fas fa-dollar-sign" aria-hidden="true"></i> $90,000 - $120,000</span>
+                                <span class="reporting">Reports to: Frontend Team Lead</span>
+                            </div>
+                        </div>
+                        <div class="job-content">
+                            <h3>About the Role</h3>
+                            <p>We're looking for a Frontend Developer to create beautiful, responsive, and accessible web applications. You'll work with modern frameworks and collaborate with designers and backend developers to deliver exceptional user experiences.</p>
+                            
+                            <h3>Key Responsibilities</h3>
+                            <ul>
+                                <li>Develop responsive web applications</li>
+                                <li>Implement UI/UX designs</li>
+                                <li>Ensure cross-browser compatibility</li>
+                                <li>Optimize application performance</li>
+                                <li>Write clean, maintainable code</li>
+                            </ul>
+
+                            <h3>Requirements</h3>
+                            <div class="requirements">
+                                <h4>Essential Requirements</h4>
+                                <ul>
+                                    <li>3+ years of frontend development experience</li>
+                                    <li>Proficiency in HTML5, CSS3, and JavaScript</li>
+                                    <li>Experience with React or Vue.js</li>
+                                    <li>Understanding of responsive design principles</li>
+                                    <li>Knowledge of accessibility standards (WCAG)</li>
+                                </ul>
+                                <h4>Preferable Requirements</h4>
+                                <ul>
+                                    <li>Experience with TypeScript</li>
+                                    <li>Knowledge of state management libraries</li>
+                                    <li>Experience with testing frameworks</li>
+                                    <li>UI/UX design skills</li>
+                                </ul>
+                            </div>
+
+                            <h3>Benefits</h3>
+                            <ul>
+                                <li>Competitive salary package</li>
+                                <li>Remote work options</li>
+                                <li>Professional development support</li>
+                                <li>Health and wellness benefits</li>
+                                <li>Modern development environment</li>
+                            </ul>
+                        </div>
+                        <div class="job-actions">
+                            <a href="apply.html?position=frontend-developer" class="cta-button">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+   
+        <section class="source-references">
+            <div class="container">
+                <h2>Sources and References</h2>
+                <div class="references-content">
+                    <div class="reference-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Job Description Templates</h3>
+                        <p>Based on best practices from <a href="http://recruitloop.com/blog/how-to-write-a-job-description/" target="_blank">RecruitLoop</a></p>
+                    </div>
+                    <div class="reference-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Salary Data</h3>
+                        <p>Market research from <a href="https://www.seek.com.au" target="_blank">SEEK</a></p>
+                    </div>
+                    <div class="reference-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Technical Requirements</h3>
+                        <p>Based on current industry standards and best practices</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h2>Why Join TechVision Solutions?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Professional Growth</h3>
+                        <p>Continuous learning opportunities and career development programs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Work-Life Balance</h3>
+                        <p>Flexible work arrangements and generous leave policies</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Great Culture</h3>
+                        <p>Collaborative environment with regular team events</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-medal"></i>
+                        <h3>Competitive Benefits</h3>
+                        <p>Comprehensive benefits package and performance bonuses</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-     <footer>
+
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Tech Careers Inc. | <a href="[Your Jira Project Link]">Jira Project</a></p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@techvision.com.au">info@techvision.com.au</a></p>
+                    <p>Phone: +61 3 1234 5678</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Project Management</h3>
+                    <p><a href="https://techvision-solutions.atlassian.net/jira/software/projects/TS/boards/1" target="_blank">View our Jira Board</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechVision Solutions. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
