@@ -168,3 +168,67 @@ $statePostcodes = [
                         <textarea id="otherSkills" name="otherSkills" rows="4"></textarea>
                     </div>
                 </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="cta-button">Submit Application</button>
+                    <button type="reset" class="secondary-button">Clear Form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<script>
+function validateForm() {
+    var errors = []; // Array to store validation error messages
+    
+    // Get values from form fields
+    var jobRef = document.getElementById('jobReference').value;
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var dateOfBirth = document.getElementById('dateOfBirth').value;
+    var gender = document.querySelector('input[name="gender"]:checked'); // Checks if a gender radio button is selected
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+    var state = document.getElementById('state').value;
+    var postcode = document.getElementById('postcode').value;
+    var skills = document.querySelectorAll('input[name="skills[]"]:checked'); // Gets all selected skill checkboxes
+    var otherSkills = document.getElementById('otherSkills').value;
+    
+    // Validate required fields and format using regex where applicable
+    if (!jobRef) errors.push("Please select a job reference");
+    if (!/^[A-Za-z]{1,20}$/.test(firstName)) errors.push("First name must contain only letters and be maximum 20 characters");
+    if (!/^[A-Za-z]{1,20}$/.test(lastName)) errors.push("Last name must contain only letters and be maximum 20 characters");
+    if (!dateOfBirth) errors.push("Date of birth is required");
+    if (!gender) errors.push("Please select a gender");
+    if (!document.getElementById('streetAddress').value.trim()) errors.push("Street address is required");
+    if (!document.getElementById('suburb').value.trim()) errors.push("Suburb/town is required");
+    if (!state) errors.push("Please select a state");
+    if (!/^\d{4}$/.test(postcode)) errors.push("Postcode must be exactly 4 digits");
+    
+    // Email validation using regex
+    if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        errors.push("Please enter a valid email address");
+    }
+    
+    // Australian phone number validation using regex
+    if (!/^(?:\+61|0)[2-478](?:[ -]?[0-9]){8}$/.test(phone)) {
+        errors.push("Please enter a valid Australian phone number");
+    }
+    
+    // Skills checkbox validation
+    if (skills.length === 0) {
+        errors.push("Please select at least one technical skill");
+    }
+    
+    // If any errors are found, display them in an alert and prevent form submission
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+    // If no errors, allow form submission
+    return true;
+}
+</script>
+
+<?php include('footer.inc'); // Includes the footer file ?>
