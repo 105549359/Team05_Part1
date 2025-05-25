@@ -197,3 +197,13 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
                            title="Password must be at least 8 characters long and contain at least one letter and one number"
                            autocomplete="new-password">
                 </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required
+                           autocomplete="new-password">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="cta-button">Register</button>
+                </div>
+            </form>
+        </div>
