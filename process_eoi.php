@@ -26,3 +26,13 @@ if ($stmt->get_result()->num_rows === 0) {
     $errors[] = "Invalid job reference number";
 }
 $stmt->close();
+
+
+$firstName = sanitizeInput($_POST['firstName']);
+$lastName = sanitizeInput($_POST['lastName']);
+if (!preg_match("/^[A-Za-z]{1,20}$/", $firstName)) {
+    $errors[] = "First name must contain only letters and be maximum 20 characters";
+}
+if (!preg_match("/^[A-Za-z]{1,20}$/", $lastName)) {
+    $errors[] = "Last name must contain only letters and be maximum 20 characters";
+}
