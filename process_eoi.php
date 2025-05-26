@@ -16,3 +16,13 @@ if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_tok
 require_once("settings.php");
 $conn = createDBConnection();
 
+$errors = [];
+
+$jobReference = sanitizeInput($_POST['jobReference']);
+$stmt = $conn->prepare("SELECT job_id FROM jobs WHERE job_id = ?");
+$stmt->bind_param("s", $jobReference);
+$stmt->execute();
+if ($stmt->get_result()->num_rows === 0) {
+    $errors[] = "Invalid job reference number";
+}
+$stmt->close();
