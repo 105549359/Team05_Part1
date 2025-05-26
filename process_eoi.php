@@ -36,3 +36,25 @@ if (!preg_match("/^[A-Za-z]{1,20}$/", $firstName)) {
 if (!preg_match("/^[A-Za-z]{1,20}$/", $lastName)) {
     $errors[] = "Last name must contain only letters and be maximum 20 characters";
 }
+
+$streetAddress = sanitizeInput($_POST['streetAddress']);
+$suburb = sanitizeInput($_POST['suburb']);
+$state = sanitizeInput($_POST['state']);
+$postcode = sanitizeInput($_POST['postcode']);
+
+if (empty($streetAddress)) {
+    $errors[] = "Street address is required";
+}
+if (empty($suburb)) {
+    $errors[] = "Suburb/town is required";
+}
+if (!in_array($state, ['VIC', 'NSW', 'QLD', 'NT', 'WA', 'SA', 'TAS', 'ACT'])) {
+    $errors[] = "Invalid state selected";
+}
+if (!preg_match("/^[0-9]{4}$/", $postcode)) {
+    $errors[] = "Postcode must be exactly 4 digits";
+}
+if (!validatePostcode($postcode, $state)) {
+    $errors[] = "Postcode does not match the selected state";
+}
+
