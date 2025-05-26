@@ -1,5 +1,5 @@
-<i?php include 'includes/header.inc'; ?>
-<?php include 'includes/nav.inc'; ?>
+<?php include 'header.inc'; ?>
+<?php include 'nav.inc'; ?>
 
 <main>
    <section class="welcome-banner">
@@ -82,4 +82,4 @@
 
 </main>
 
-<?php include 'includes/footer.inc'; ?>
+<?php include 'footer.inc'; ?>
