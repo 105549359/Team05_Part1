@@ -13,3 +13,6 @@ if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_tok
     exit();
 }
 
+require_once("settings.php");
+$conn = createDBConnection();
+
