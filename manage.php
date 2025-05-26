@@ -439,3 +439,99 @@ $sql .= " ORDER BY " . $sort_column . " " . $sort_direction;
                     ?>
                 </div>
             <?php endif; ?>
+
+            <div class="results-section">
+                <div class="results-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>EOI Number</th>
+                                <th>Job Reference</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Skills</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $stmt = $conn->prepare($sql);
+                            if (!empty($params)) {
+                                $stmt->bind_param($types, ...$params);
+                            }
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    $skills = [];
+                                    if ($row['skill1']) $skills[] = 'Python';
+                                    if ($row['skill2']) $skills[] = 'Java';
+                                    if ($row['skill3']) $skills[] = 'JavaScript';
+                                    ?>
+                                    <tr>
+                                        <td><?php echo htmlspecialchars($row['EOInumber']); ?></td>
+                                        <td><?php echo htmlspecialchars($row['job_ref']); ?></td>
+                                        <td><?php echo htmlspecialchars($row['fname'] . ' ' . $row['lname']); ?></td>
+                                        <td>
+                                            <a href="mailto:<?php echo htmlspecialchars($row['email']); ?>" class="email-link">
+                                                <?php echo htmlspecialchars($row['email']); ?>
+                                            </a>
+                                        </td>
+                                        <td><?php echo htmlspecialchars($row['phone']); ?></td>
+                                        <td>
+                                            <div class="skills-list">
+                                                <?php 
+                                                if (!empty($skills)) {
+                                                    echo '<div class="skill-tags">';
+                                                    foreach ($skills as $skill) {
+                                                        echo '<span class="skill-tag">' . htmlspecialchars($skill) . '</span>';
+                                                    }
+                                                    echo '</div>';
+                                                }
+                                                if (!empty($row['otherskills'])) {
+                                                    echo '<div class="other-skills">';
+                                                    echo '<small>Other: ' . htmlspecialchars($row['otherskills']) . '</small>';
+                                                    echo '</div>';
+                                                }
+                                                ?>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <form method="POST" class="status-form">
+                                                <input type="hidden" name="action" value="update_status">
+                                                <input type="hidden" name="EOInumber" value="<?php echo $row['EOInumber']; ?>">
+                                                <select name="status" onchange="this.form.submit()" class="status-select status-<?php echo strtolower($row['status']); ?>">
+                                                    <option value="New" <?php echo $row['status'] === 'New' ? 'selected' : ''; ?>>New</option>
+                                                    <option value="Current" <?php echo $row['status'] === 'Current' ? 'selected' : ''; ?>>Current</option>
+                                                    <option value="Final" <?php echo $row['status'] === 'Final' ? 'selected' : ''; ?>>Final</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete all applications for this job reference?');">
+                                                <input type="hidden" name="action" value="delete">
+                                                <input type="hidden" name="job_ref" value="<?php echo $row['job_ref']; ?>">
+                                                <button type="submit" class="delete-button">
+                                                    <i class="fas fa-trash-alt"></i> Delete All
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                            } else {
+                                ?>
+                                <tr>
+                                    <td colspan="8" class="no-results">
+                                        <div class="no-data-message">
+                                            <i class="fas fa-inbox"></i>
+                                            <p>No applications found</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php
+                            }
+                            $stmt->close();
