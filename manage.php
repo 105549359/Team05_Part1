@@ -316,3 +316,18 @@ if (isset($_GET['skill_filter']) && !empty($_GET['skill_filter'])) {
             break;
     }
 }
+
+$sql = "SELECT * FROM eoi";
+if (!empty($where_conditions)) {
+    $sql .= " WHERE " . implode(" AND ", $where_conditions);
+}
+
+$sort_column = isset($_GET['sort']) ? $_GET['sort'] : 'EOInumber';
+$allowed_columns = ['EOInumber', 'job_ref', 'fname', 'lname', 'status'];
+if (!in_array($sort_column, $allowed_columns)) {
+    $sort_column = 'EOInumber';
+}
+
+$sort_direction = isset($_GET['sort_direction']) && $_GET['sort_direction'] === 'DESC' ? 'DESC' : 'ASC';
+$sql .= " ORDER BY " . $sort_column . " " . $sort_direction;
+?>
