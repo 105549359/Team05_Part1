@@ -7,7 +7,7 @@ include('header.inc');
 <main>
     <section class="hero">
         <div class="container">
-            <h2>About TechVision Solutions</h2>
+            <h2>About CDS Solutions</h2>
             <p>Innovative Technology Solutions for Tomorrow's Challenges</p>
         </div>
     </section>
@@ -17,7 +17,7 @@ include('header.inc');
             <div class="group-info">
                 <h2>Group Information</h2>
                 <ul class="nested-list">
-                    <li>Group Name: TechVision Solutions
+                    <li>Group Name: Group Neutral
                         <ul>
                             <li>Class Details:
                                 <ul>
@@ -45,8 +45,8 @@ include('header.inc');
             </div>
 
             <figure class="group-photo">
-                <img src="images/group-photo.jpg" alt="TechVision Solutions Team" width="300">
-                <figcaption>TechVision Solutions Team Members (Left to Right): Chanuth, Chamath, Shehan, Ravindu</figcaption>
+                <img src="images/group-photo.jpg" alt="CDS Solutions Team" width="300">
+                <figcaption>CDS Solutions Team Members (Left to Right): Chanuth, Chamath, Shehan, Ravindu</figcaption>
             </figure>
 
             <div class="member-contributions">
