@@ -87,3 +87,23 @@ if (!empty($errors)) {
     header("Location: apply.php");
     exit();
 }
+
+$sql = "INSERT INTO eoi (job_ref, fname, lname, street, suburb, state, postcode, 
+        email, phone, skill1, skill2, skill3, otherskills, status) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'New')";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sssssssssiiis", 
+    $jobReference, $firstName, $lastName, $streetAddress, $suburb, $state, $postcode,
+    $email, $phone, $skill1, $skill2, $skill3, $otherSkills
+);
+
+if ($stmt->execute()) {
+    $EOInumber = $conn->insert_id;
+    $_SESSION['success'] = "Thank you for your application! Your EOI number is: " . $EOInumber;
+} else {
+    $_SESSION['errors'] = ["Error submitting application. Please try again."];
+}
+
+$stmt->close();
+$conn->close();
