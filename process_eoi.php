@@ -81,3 +81,9 @@ if ($skill1 == 0 && $skill2 == 0 && $skill3 == 0 && empty($otherSkills)) {
 }
 
 
+if (!empty($errors)) {
+    $_SESSION['errors'] = $errors;
+    $_SESSION['form_data'] = $_POST;
+    header("Location: apply.php");
+    exit();
+}
