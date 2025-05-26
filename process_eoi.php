@@ -58,3 +58,16 @@ if (!validatePostcode($postcode, $state)) {
     $errors[] = "Postcode does not match the selected state";
 }
 
+
+$email = sanitizeInput($_POST['email']);
+$phone = sanitizeInput($_POST['phone']);
+
+if (!preg_match("/^(?:\+61|0)[2-478](?:[ -]?[0-9]){8}$/", $phone)) {
+    $errors[] = "Invalid Australian phone number format";
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || 
+    !preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $email)) {
+    $errors[] = "Invalid email format";
+}
+
