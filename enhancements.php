@@ -46,3 +46,54 @@ include('header.inc');
                     <p>Implemented using MySQL ORDER BY and WHERE clauses with parameterized queries for security.</p>
                 </div>
             </div>
+
+            <div class="enhancement-item">
+                <h3>2. Secure Authentication System</h3>
+                <div class="enhancement-details">
+                    <h4>Description</h4>
+                    <p>Comprehensive authentication system for HR managers with security features.</p>
+                    
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Secure registration system with:
+                            <ul>
+                                <li>Password hashing using PHP's password_hash()</li>
+                                <li>Email validation</li>
+                                <li>Username uniqueness check</li>
+                            </ul>
+                        </li>
+                        <li>Enhanced login security:
+                            <ul>
+                                <li>Account lockout after 3 failed attempts</li>
+                                <li>15-minute lockout period</li>
+                                <li>Remaining attempts counter</li>
+                            </ul>
+                        </li>
+                        <li>Session management for secure access control</li>
+                    </ul>
+
+                    <h4>Technical Implementation</h4>
+                    <p>Uses PHP sessions, prepared statements for database queries, and secure password handling practices.</p>
+                </div>
+            </div>
+
+            <div class="enhancement-item">
+                <h3>3. Dynamic Job Management</h3>
+                <div class="enhancement-details">
+                    <h4>Description</h4>
+                    <p>Implemented a database-driven job listing system.</p>
+                    
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Jobs stored in MySQL database</li>
+                        <li>Dynamic job listing page</li>
+                        <li>Automatic job reference selection in application form</li>
+                    </ul>
+
+                    <h4>Technical Implementation</h4>
+                    <p>Created a jobs table in MySQL and implemented dynamic content loading in PHP.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
