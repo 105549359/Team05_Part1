@@ -331,3 +331,111 @@ if (!in_array($sort_column, $allowed_columns)) {
 $sort_direction = isset($_GET['sort_direction']) && $_GET['sort_direction'] === 'DESC' ? 'DESC' : 'ASC';
 $sql .= " ORDER BY " . $sort_column . " " . $sort_direction;
 ?>
+
+<main class="manage-page">
+    <section class="hero">
+        <div class="container">
+            <h2>HR Manager Dashboard</h2>
+            <p>Manage job applications and expressions of interest</p>
+            <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                <div class="user-controls">
+                    <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                    <form method="POST" style="display: inline;">
+                        <input type="hidden" name="action" value="logout">
+                        <button type="submit" class="secondary-button">Logout</button>
+                    </form>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <section class="manager-dashboard">
+        <div class="container">
+            <div class="filter-section">
+                <form method="GET" class="filter-form">
+                    <div class="form-group">
+                        <label for="job_ref">Job Reference:</label>
+                        <input type="text" id="job_ref" name="job_ref" 
+                               value="<?php echo isset($_GET['job_ref']) ? htmlspecialchars($_GET['job_ref']) : ''; ?>"
+                               placeholder="Enter job reference">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Search by Name:</label>
+                        <input type="text" id="name" name="name" 
+                               value="<?php echo isset($_GET['name']) ? htmlspecialchars($_GET['name']) : ''; ?>"
+                               placeholder="Enter first or last name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status_filter">Filter by Status:</label>
+                        <select name="status_filter" id="status_filter">
+                            <option value="">All</option>
+                            <option value="New">New</option>
+                            <option value="Current">Current</option>
+                            <option value="Final">Final</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill_filter">Filter by Skill:</label>
+                        <select name="skill_filter" id="skill_filter">
+                            <option value="">All</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="JavaScript">JavaScript</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sort">Sort By:</label>
+                        <select name="sort" id="sort">
+                            <option value="EOInumber" <?php echo $sort_column === 'EOInumber' ? 'selected' : ''; ?>>EOI Number</option>
+                            <option value="job_ref" <?php echo $sort_column === 'job_ref' ? 'selected' : ''; ?>>Job Reference</option>
+                            <option value="fname" <?php echo $sort_column === 'fname' ? 'selected' : ''; ?>>First Name</option>
+                            <option value="lname" <?php echo $sort_column === 'lname' ? 'selected' : ''; ?>>Last Name</option>
+                            <option value="status" <?php echo $sort_column === 'status' ? 'selected' : ''; ?>>Status</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sort_direction">Sort Direction:</label>
+                        <select name="sort_direction" id="sort_direction">
+                            <option value="ASC" <?php echo $sort_direction === 'ASC' ? 'selected' : ''; ?>>Ascending</option>
+                            <option value="DESC" <?php echo $sort_direction === 'DESC' ? 'selected' : ''; ?>>Descending</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="cta-button">
+                            <i class="fas fa-search"></i> Apply Filters
+                        </button>
+                        <a href="manage.php" class="secondary-button">
+                            <i class="fas fa-undo"></i> Reset Filters
+                        </a>
+                        <button type="button" class="export-button" onclick="exportToCSV()">
+                            <i class="fas fa-download"></i> Export Results
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <?php if (isset($_SESSION['success'])): ?>
+                <div class="alert alert-success">
+                    <i class="fas fa-check-circle"></i>
+                    <?php 
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                    ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert alert-error">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <?php 
+                    echo $_SESSION['error'];
+                    unset($_SESSION['error']);
+                    ?>
+                </div>
+            <?php endif; ?>
