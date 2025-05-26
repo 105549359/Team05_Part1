@@ -535,3 +535,16 @@ $sql .= " ORDER BY " . $sort_column . " " . $sort_direction;
                                 <?php
                             }
                             $stmt->close();
+                             ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php 
+$conn->close();
+include('footer.inc'); 
+?> 
