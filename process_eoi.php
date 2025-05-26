@@ -71,3 +71,13 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL) ||
     $errors[] = "Invalid email format";
 }
 
+$skill1 = isset($_POST['skills']) && in_array('python', $_POST['skills']) ? 1 : 0;
+$skill2 = isset($_POST['skills']) && in_array('java', $_POST['skills']) ? 1 : 0;
+$skill3 = isset($_POST['skills']) && in_array('javascript', $_POST['skills']) ? 1 : 0;
+$otherSkills = sanitizeInput($_POST['otherSkills']);
+
+if ($skill1 == 0 && $skill2 == 0 && $skill3 == 0 && empty($otherSkills)) {
+    $errors[] = "Please select at least one skill or specify other skills";
+}
+
+
