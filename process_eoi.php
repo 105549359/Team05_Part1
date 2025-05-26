@@ -6,3 +6,10 @@ if ($_SERVER["REQUEST_METHOD"] != "POST" || !isset($_POST['jobReference'])) {
     header("Location: apply.php");
     exit();
 }
+
+if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+    $_SESSION['error'] = "Invalid form submission. Please try again.";
+    header("Location: apply.php");
+    exit();
+}
+
